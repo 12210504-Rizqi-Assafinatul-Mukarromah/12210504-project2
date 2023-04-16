@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pendataanwarga/views/dashboard_view.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -11,7 +12,7 @@ class LoginView extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 90, bottom: 60),
             child: Text(
-              'Aplikasi\nPendataanWarga',
+              'Aplikasi\nPendataan Warga',
               style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
               ),
@@ -22,7 +23,7 @@ class LoginView extends StatelessWidget {
                   height: 380,
                   child: Card(
                     margin: EdgeInsets.only(top: 50, left: 20, right: 20),
-                    color: Color.fromARGB(255, 224, 171, 153),
+                    color: Color.fromARGB(255, 219, 176, 202),
                     child: Column(
                       children: [
                         SizedBox(
@@ -47,7 +48,13 @@ class LoginView extends StatelessWidget {
                               ),
                             ),
                             ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(builder: (bc){
+                                    return Dashboardview();
+                                  }));
+                              },
                                child: Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 40),
                                 child: Text('Login'),
